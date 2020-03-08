@@ -1,8 +1,17 @@
+const {
+  siteDescription,
+  userName,
+  siteTitle,
+  siteTitleShort,
+  pathPrefix,
+  siteLogo,
+} = require("./data/site-config")
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: siteTitle,
+    description: siteDescription,
+    author: userName,
   },
   plugins: [
     `gatsby-plugin-graphql-codegen`,
@@ -37,17 +46,25 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
+        name: siteTitle,
+        short_name: siteTitleShort,
+        start_url: pathPrefix,
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icons: [
+          {
+            src: siteLogo,
+            sizes: "48x48",
+            type: "image/png",
+          },
+          {
+            src: siteLogo,
+            sizes: "1024x1024",
+            type: "image/png",
+          },
+        ],
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ],
 }

@@ -4,9 +4,9 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
-import { PostIndexQueryQuery } from "../../graphql-types"
+import { PostIndexQuery } from "../../graphql-types"
 
-const IndexPage = ({ data }: { data: PostIndexQueryQuery }) => {
+const IndexPage = ({ data }: { data: PostIndexQuery }) => {
   return (
     <Layout>
       <SEO title="Home" />
@@ -22,7 +22,7 @@ const IndexPage = ({ data }: { data: PostIndexQueryQuery }) => {
 }
 
 export const pageQuery = graphql`
-  query PostIndexQuery {
+  query PostIndex {
     allMarkdownRemark(
       filter: { frontmatter: { draft: { eq: false } } }
       sort: { fields: frontmatter___date, order: DESC }

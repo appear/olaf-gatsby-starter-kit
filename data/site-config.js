@@ -1,0 +1,18 @@
+module.exports = {
+  siteTitle: "Olaf.io",
+  siteTitleShort: "Olaf.io",
+  siteTitleAlt: "Olaf.io",
+  siteDescription: "Olaf Gatsby Starter Kit",
+  siteLogo: "/logos/gatsby-icon.png",
+  siteUrl: "",
+  repo: "https://github.com/appear/olaf-gatsby-starter-kit",
+  dateFromFormat: "YYYY-MM-DD",
+  dateFormat: "MMMM Do, YYYY",
+  siteRss: "/rss.xml",
+  googleAnalyticsID: "",
+  postDefaultCategoryID: "Tech",
+  userName: "",
+  userEmail: "",
+  userTwitter: "",
+  pathPrefix: "/",
+}

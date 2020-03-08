@@ -2381,7 +2381,10 @@ export type SitePageFieldsEnum =
   'pluginCreator___pluginOptions___background_color' |
   'pluginCreator___pluginOptions___theme_color' |
   'pluginCreator___pluginOptions___display' |
-  'pluginCreator___pluginOptions___icon' |
+  'pluginCreator___pluginOptions___icons' |
+  'pluginCreator___pluginOptions___icons___src' |
+  'pluginCreator___pluginOptions___icons___sizes' |
+  'pluginCreator___pluginOptions___icons___type' |
   'pluginCreator___pluginOptions___pathCheck' |
   'pluginCreator___nodeAPIs' |
   'pluginCreator___browserAPIs' |
@@ -2581,7 +2584,10 @@ export type SitePluginFieldsEnum =
   'pluginOptions___background_color' |
   'pluginOptions___theme_color' |
   'pluginOptions___display' |
-  'pluginOptions___icon' |
+  'pluginOptions___icons' |
+  'pluginOptions___icons___src' |
+  'pluginOptions___icons___sizes' |
+  'pluginOptions___icons___type' |
   'pluginOptions___pathCheck' |
   'nodeAPIs' |
   'browserAPIs' |
@@ -2703,7 +2709,7 @@ export type SitePluginPluginOptions = {
   background_color?: Maybe<Scalars['String']>,
   theme_color?: Maybe<Scalars['String']>,
   display?: Maybe<Scalars['String']>,
-  icon?: Maybe<Scalars['String']>,
+  icons?: Maybe<Array<Maybe<SitePluginPluginOptionsIcons>>>,
   pathCheck?: Maybe<Scalars['Boolean']>,
 };
 
@@ -2716,8 +2722,24 @@ export type SitePluginPluginOptionsFilterInput = {
   background_color?: Maybe<StringQueryOperatorInput>,
   theme_color?: Maybe<StringQueryOperatorInput>,
   display?: Maybe<StringQueryOperatorInput>,
-  icon?: Maybe<StringQueryOperatorInput>,
+  icons?: Maybe<SitePluginPluginOptionsIconsFilterListInput>,
   pathCheck?: Maybe<BooleanQueryOperatorInput>,
+};
+
+export type SitePluginPluginOptionsIcons = {
+  src?: Maybe<Scalars['String']>,
+  sizes?: Maybe<Scalars['String']>,
+  type?: Maybe<Scalars['String']>,
+};
+
+export type SitePluginPluginOptionsIconsFilterInput = {
+  src?: Maybe<StringQueryOperatorInput>,
+  sizes?: Maybe<StringQueryOperatorInput>,
+  type?: Maybe<StringQueryOperatorInput>,
+};
+
+export type SitePluginPluginOptionsIconsFilterListInput = {
+  elemMatch?: Maybe<SitePluginPluginOptionsIconsFilterInput>,
 };
 
 export type SitePluginPluginOptionsPlugins = {
@@ -2775,10 +2797,15 @@ export type StringQueryOperatorInput = {
   glob?: Maybe<Scalars['String']>,
 };
 
-export type PostIndexQueryQueryVariables = {};
+export type SeoQueryVariables = {};
 
 
-export type PostIndexQueryQuery = { allMarkdownRemark: (
+export type SeoQuery = { site: Maybe<{ siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'author'>> }> };
+
+export type PostIndexQueryVariables = {};
+
+
+export type PostIndexQuery = { allMarkdownRemark: (
     Pick<MarkdownRemarkConnection, 'totalCount'>
     & { pageInfo: Pick<PageInfo, 'pageCount' | 'perPage'>, edges: Array<{ node: (
         Pick<MarkdownRemark, 'id' | 'html' | 'excerpt'>
