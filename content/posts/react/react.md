@@ -13,4 +13,8 @@ asdas
 
 ```js
 const a = 10
+
+function foo() {
+  console.log("hello")
+}
 ```
