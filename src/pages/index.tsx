@@ -1,17 +1,12 @@
 import React from "react"
-import { Link } from "gatsby"
-import Img from "gatsby-image"
+import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
+import { PostIndexQueryQuery } from "../../graphql-types"
 
-const IndexPage = ({ data }) => {
-  console.log("data", data)
-
-  const [edge] = data.allMarkdownRemark.edges
-
-  console.log(edge.node.frontmatter.thumbnail.childImageSharp.fluid)
+const IndexPage = ({ data }: { data: PostIndexQueryQuery }) => {
   return (
     <Layout>
       <SEO title="Home" />
@@ -22,13 +17,12 @@ const IndexPage = ({ data }) => {
         <Image />
       </div>
       <Link to="/page-2/">Go to page 2</Link>
-      <Img fluid={edge.node.frontmatter.thumbnail.childImageSharp.fluid} />
     </Layout>
   )
 }
 
 export const pageQuery = graphql`
-  query {
+  query PostIndexQuery {
     allMarkdownRemark(
       filter: { frontmatter: { draft: { eq: false } } }
       sort: { fields: frontmatter___date, order: DESC }
