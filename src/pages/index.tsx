@@ -2,7 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
+import Image from "../components/shared/image"
 import SEO from "../components/seo"
 import { PostIndexQuery } from "../../graphql-types"
 
