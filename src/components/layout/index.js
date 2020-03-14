@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "../gnb"
+import Gnb from "../gnb"
 import { ThemeContextProvider } from "../../contexts/theme"
 import ResetStyle from "../shared/reset-style"
 
@@ -21,7 +21,7 @@ const Layout = ({ children }) => {
     <>
       <ResetStyle />
       <ThemeContextProvider>
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <Gnb siteTitle={data.site.siteMetadata.title} />
         <div
           style={{
             margin: `0 auto`,
