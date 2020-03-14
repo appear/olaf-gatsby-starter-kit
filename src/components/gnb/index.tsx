@@ -9,12 +9,14 @@ interface GnbProps {
 
 function Gnb({ siteTitle }: GnbProps) {
   return (
-    <Container>
+    <>
       <Line />
-      <Link to="/" fontSize={4} fontWeight="bold">
-        {siteTitle}
-      </Link>
-    </Container>
+      <Container maxWidth={720}>
+        <Link to="/" fontSize={4} fontWeight="bold">
+          {siteTitle}
+        </Link>
+      </Container>
+    </>
   )
 }
 
