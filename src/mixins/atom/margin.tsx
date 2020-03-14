@@ -4,5 +4,6 @@ export type Margin = string
 
 export const margin = (value?: Margin) =>
   css`
-    ${({ margin }: { margin?: Margin }) => `margin: ${margin || value};`}
+    ${({ margin = value }: { margin?: Margin }) =>
+      margin && `margin: ${margin || value};`}
   `

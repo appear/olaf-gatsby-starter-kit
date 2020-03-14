@@ -3,6 +3,7 @@ import { createContext, useState } from "react"
 import { ThemeProvider } from "styled-components"
 
 import { COMMON_THEME } from "../theme/common"
+import { WHITE_THEME } from "../theme/white"
 
 type Theme = "white" | "dark"
 
@@ -32,7 +33,9 @@ export function ThemeContextProvider({
 
   return (
     <Context.Provider value={values}>
-      <ThemeProvider theme={{ ...COMMON_THEME }}>{children}</ThemeProvider>
+      <ThemeProvider theme={{ ...COMMON_THEME, ...WHITE_THEME }}>
+        {children}
+      </ThemeProvider>
     </Context.Provider>
   )
 }
