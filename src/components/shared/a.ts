@@ -8,5 +8,6 @@ export default styled(Link)<{
   fontWeight?: FontWeight
 }>`
   font-size: ${({ theme, fontSize }) => theme.fontSize[fontSize || 3]};
+  color: ${({ theme }) => theme.colors.text};
   ${fontWeight()}
 `
