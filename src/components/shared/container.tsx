@@ -9,12 +9,16 @@ import {
   MaxWidth,
 } from "../../mixins/atom"
 
+import { centered, Centered } from "../../mixins/molecular"
+
 export default styled.div<{
   margin?: Margin
   padding?: Padding
   maxWidth?: MaxWidth
+  centered?: Centered
 }>`
   ${margin()}
   ${padding()}
   ${maxWidth()}
+  ${centered()}
 `

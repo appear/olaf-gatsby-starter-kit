@@ -6,4 +6,4 @@ export const padding = (value?: Padding) => ({
   padding = value,
 }: {
   padding?: string
-}) => padding && `padding: ${padding}`
+}) => padding && `padding: ${padding};`

@@ -11,7 +11,7 @@ function Gnb({ siteTitle }: GnbProps) {
   return (
     <>
       <Line />
-      <Container maxWidth={720}>
+      <Container maxWidth={720} centered padding="20px 10px">
         <Link to="/" fontSize={4} fontWeight="bold">
           {siteTitle}
         </Link>
