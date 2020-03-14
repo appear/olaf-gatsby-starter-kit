@@ -2,7 +2,7 @@ import { css } from "styled-components"
 
 export type Margin = string
 
-export const margin = (value?: Margin) => ({ margin }: { margin?: Margin }) =>
+export const margin = (value?: Margin) =>
   css`
-    margin: ${margin || value};
+    ${({ margin }: { margin?: Margin }) => `margin: ${margin || value};`}
   `
