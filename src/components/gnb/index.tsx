@@ -9,7 +9,7 @@ interface GnbProps {
 function Gnb({ siteTitle }: GnbProps) {
   return (
     <Container>
-      <Link to="/" fontSize={4}>
+      <Link to="/" fontSize={4} fontWeight="bold">
         {siteTitle}
       </Link>
     </Container>
