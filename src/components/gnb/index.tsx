@@ -1,7 +1,20 @@
 import React from "react"
+import styled from "styled-components"
+import { Link } from "gatsby"
 
-import { Container, Text, Link } from "../shared"
 import Line from "./line"
+
+const GnbFrame = styled.div`
+  max-width: 800px;
+  margin: auto;
+  padding: 20px 10px;
+`
+
+const Logo = styled(Link)`
+  font-size: 24px;
+  font-weight: bold;
+  color: ${props => props.theme.colors.text};
+`
 
 interface GnbProps {
   siteTitle: string
@@ -11,13 +24,11 @@ function Gnb({ siteTitle }: GnbProps) {
   return (
     <>
       <Line />
-      <Container maxWidth={720} centered padding="20px 10px">
-        <Link to="/" fontSize={4} fontWeight="bold">
-          {siteTitle}
-        </Link>
+      <GnbFrame>
+        <Logo to="/">{siteTitle}</Logo>
         <div>ABOUT</div>
         <div>POSTS</div>
-      </Container>
+      </GnbFrame>
     </>
   )
 }

@@ -2702,6 +2702,11 @@ export type StringQueryOperatorInput = {
   glob?: Maybe<Scalars['String']>,
 };
 
+export type SiteTitleQueryQueryVariables = {};
+
+
+export type SiteTitleQueryQuery = { site: Maybe<{ siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
+
 export type SeoQueryVariables = {};
 
 

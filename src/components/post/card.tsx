@@ -2,9 +2,10 @@ import React from "react"
 import styled from "styled-components"
 
 import { Post } from "./types"
-import { Container } from "../shared"
 
-const CardFrame = styled(Container)``
+const CardFrame = styled.div`
+  width: 25%;
+`
 
 function PostCard({ post }: { post: Post }) {
   console.log("post", post)
