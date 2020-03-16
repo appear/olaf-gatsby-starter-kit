@@ -1,6 +1,6 @@
 import steyld from "styled-components"
 
-import { FontWeight, fontWeight } from "../../mixins/atom"
+import fontWeight, { FontWeight } from "../../mixins/atom/font-weight"
 
 export default steyld.div<{
   fontSize?: number

@@ -1,7 +1,7 @@
 ---
 title: 리액트를 배우다
 date: 2019-1-3 16:21:13
-thumbnail: ../../thumbnail/gatsby-icon.png
+thumbnail: /images/penghi.png
 category: "react"
 draft: false
 ---

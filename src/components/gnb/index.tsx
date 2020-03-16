@@ -15,6 +15,8 @@ function Gnb({ siteTitle }: GnbProps) {
         <Link to="/" fontSize={4} fontWeight="bold">
           {siteTitle}
         </Link>
+        <div>ABOUT</div>
+        <div>POSTS</div>
       </Container>
     </>
   )
